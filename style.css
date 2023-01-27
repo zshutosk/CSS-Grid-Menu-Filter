@@ -1,0 +1,166 @@
+*{
+    box-sizing:border-box;
+}
+
+body {
+    background:#e5e5e5;
+    color:#14213d;
+    font-family: 'Montserrat', sans-serif;
+    margin:0;
+}
+
+/* everything in the middle */
+
+.container {
+    margin:auto;
+    max-width:1170px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    text-align:center;
+    align-items:center;
+}
+
+h1{
+    margin-bottom:12px;
+}
+
+hr.solid {
+    width:150px;
+    border-top: 3px solid #fca311;
+  }
+
+
+/* button styles */
+button {
+    padding: 6px 15px;
+    font-weight:bold;
+    border: 2px solid #14213d;
+    color:#14213d;
+    background-color:#e5e5e5;
+    margin: 4px 2px;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+button:hover{
+    color:#fff;
+    background-color:#14213d;
+}
+
+#flex-buttons {
+    margin-top:10px;
+}
+
+/*CSS GRID Menu Section */
+
+.food-items-container {
+    width: 90vw;
+    /*  it aligns the items inside their grid areas on the inline axis */
+    justify-items: center;
+    display:grid;
+    gap: 1rem 2rem;
+    grid-template-columns:1fr 1fr;
+    margin-top:50px;
+}
+
+.food-items-container img {
+   width:220px;
+   height:200px;
+   object-fit:cover;
+   border: 2.8px solid #fca311;
+}
+
+hr.border {
+    width:100%;
+    border:none;
+    border-bottom: 1px solid #fca311;
+  }
+
+/* Item Content */
+.item {
+    display: grid;
+    gap: 1rem 2rem;
+    max-width: 25rem;
+}
+
+.item-info header {
+    display: flex;
+    /* Indents Price */
+    justify-content: space-between;
+  }
+
+  .item-info h4 {
+    margin-top:5px;
+  }
+
+  .item-text {
+    text-align:left;
+  }
+
+  .price {
+    color:#fca311;
+  }
+
+  .hidden {
+    display:none;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #e5e5e5;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: #14213d;
+    padding: 6px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.checked {
+    color: orange;
+  }
+
+.stars {
+  text-align:left;
+  margin-top:-10px;
+}
+  
+
+  @media screen and (min-width: 768px) {
+    .item {
+      grid-template-columns: 225px 1fr;
+      gap: 0 1.25rem;
+      max-width: 40rem;
+    }
+    .food-items-container img {
+      height: 175px;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    .food-items-container {
+      width: 95vw;
+      grid-template-columns: 1fr 1fr;
+    }
+    .food-items-container img {
+      height: 150px;
+    }
+  }
+  

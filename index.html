@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant-Menu-App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel = "stylesheet" href= "style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+<div class ="container">
+        <h1>Our Menu</h1>
+        <hr class="border">
+         <!--Filter Buttons -->
+
+         <!--adding event listener to each of filters to call function, passing filter value -->
+            <div id ="flex-buttons">
+            <button type ="button" class="filter" data-filter="*" onclick=filterItems(event)>All</button>
+            <button type ="button" class="filter" data-filter="breakfast" onclick=filterItems(event)>Breakfast</button>
+            <button type ="button" class="filter" data-filter="lunch" onclick=filterItems(event)>Lunch</button>
+            <button type ="button" class="filter" data-filter="drink" onclick=filterItems(event)>Drinks</button>
+            <button type ="button" class="filter" data-filter="dinner" onclick=filterItems(event)>Dinner</button>
+            <!--<div class="dropdown">
+                <button type ="button" class="dropbtn">Sort</button>
+            <div class="dropdown-content">
+                <button type ="button" role ="btn" id="sort-rating">Sort: Rating Low To High</button>
+                <button type ="button" role ="btn" id="sort-rating">Sort: Rating High To Low</button>
+                </div>
+            </div>
+            -->
+        </div>
+                <!-- Menu Section -->
+            <div class="food-items-container">
+        
+
+                <div class="item breakfast" data-price="16">
+                    <img src="/img/avocado.jpg">
+                    <div class="item-info">
+                        <header>
+                        <h4>Avocado Toast</h4>
+                        <h4 class="price">$16.99</h4>
+                        </header>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <hr class="border">
+                        <p class="item-text">
+                            Nesciunt ipsum dolor sit amet excepturi adipisicing elit.
+                            Repudiandae, sint quam. Et reprehenderit fugiat nesciunt inventore
+                            laboriosam excepturi!
+                          </p>
+                          
+                    </div>
+                </div>
+
+                <div class="item lunch" data-price="12">
+                    <img src="/img/burger.jpg">
+                    <div class="item-info">
+                        <header>
+                        <h4>Big Burger</h4>
+                        <h4 class="price">$12.99</h4>
+                        </header>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <hr class="border">
+                        <p class="item-text">
+                            Lorem consectetur dolor sit laboriosam elit.
+                            Repudiandae, sint quam. Et reprehenderit fugiat nesciunt.
+                          </p>
+                    </div>
+                </div>
+
+               <div class="item drink">
+                    <img src="/img/gentleman.jpg">
+                    <div class="item-info">
+                        <header>
+                        <h4>The Gentleman</h4>
+                        <h4 class="price">$10.99</h4>
+                        </header>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <hr class="border">
+                        <p class="item-text">
+                            Lorem reprehenderit dolor sit elit reprehenderit. Repudiandae, sint quam. Et reprehenderit fugiat.
+                          </p>
+                    </div>
+                </div>
+                <div class="item drink">
+                    <img src="/img/marg.jpg">
+                    <div class="item-info">
+                        <header>
+                        <h4>Silly Margarita</h4>
+                        <h4 class="price">$12.99</h4>
+                        </header>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <hr class="border">
+                        <p class="item-text">
+                            Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis.
+                          </p>
+                    </div>
+                </div>
+                <div class="item drink">
+                    <img src="/img/mojito.jpg">
+                    <div class="item-info">
+                        <header>
+                        <h4>Clean Mojito</h4>
+                        <h4 class="price">$13.99</h4>
+                        </header>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span> 
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <hr class="border">
+                        <p class="item-text">
+                            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                            voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi.
+                          </p>
+                    </div>
+                </div>
+                <div class="item drink">
+                    <img src="/img/old.jpg">
+                    <div class="item-info">
+                        <header>
+                        <h4>Old Fashioned</h4>
+                        <h4 class="price">$13.99</h4>
+                        </header>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span> 
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <hr class="border">
+                        <p class="item-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Repudiandae, sint quam. Et reprehenderit fugiat nesciunt inventore
+                            laboriosam excepturi! Quo, officia.
+                          </p>
+                    </div>
+                </div>
+                <div class="item breakfast">
+                    <img src="/img/om.jpg">
+                    <div class="item-info">
+                        <header>
+                        <h4>Cheddar Omelette</h4>
+                        <h4 class="price">$17.99</h4>
+                        </header>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span> 
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <hr class="border">
+                        <p class="item-text">
+                            Sed ut perspiciatis unde omnis iste natus error sit
+                            voluptatem accusantium doloremque laudantium, totam rem aperiam.
+                          </p>
+                    </div>
+                </div>
+                <div class="item breakfast">
+                    <img src="/img/pancakes.jpg">
+                    <div class="item-info">
+                        <header>
+                        <h4>The Stacked Pancake</h4>
+                        <h4 class="price">$17.99</h4>
+                        </header>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span> 
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <hr class="border">
+                        <p class="item-text">
+                            Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+                          </p>
+                    </div>
+                </div>
+                <div class="item dinner">
+                    <img src="/img/pasta.jpg">
+                    <div class="item-info">
+                        <header>
+                        <h4>Meat Pasta</h4>
+                        <h4 class="price">$28.99</h4>
+                        </header>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span> 
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <hr class="border">
+                        <p class="item-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Repudiandae, sint quam. Et reprehenderit fugiat nesciunt inventore
+                            laboriosam excepturi! Quo, officia.
+                          </p>
+                    </div>
+                </div>
+                <div class="item dinner">
+                    <img src="/img/pizza.jpg">
+                    <div class="item-info">
+                        <header>
+                        <h4>Spinach Pizza</h4>
+                        <h4 class="price">$20.99</h4>
+                        </header>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span> 
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </div>
+                        <hr class="border">
+                        <p class="item-text">
+                            Vivamus elementum semper nisi. Ipsum dolor sit amet consectetur adipisicing elit.
+                            Repudiandae, sint quam.
+                          </p>
+                    </div>
+                </div>
+                <div class="item lunch">
+                    <img src="/img/salad.jpg">
+                    <div class="item-info">
+                        <header>
+                        <h4>Salad</h4>
+                        <h4 class="price">$12.99</h4>
+                        </header>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span> 
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <hr class="border">
+                        <p class="item-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Repudiandae, sint quam. Et reprehenderit fugiat nesciunt inventore
+                            laboriosam excepturi! Quo, officia.
+                          </p>
+                    </div>
+                </div>
+                <div class="item dinner">
+                    <img src="/img/salmon.jpg">
+                    <div class="item-info">
+                        <header>
+                        <h4>Atlantic Salmon</h4>
+                        <h4 class="price">$30.99</h4>
+                        </header>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span> 
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <hr class="border">
+                        <p class="item-text">
+                            Ut enim ad minima veniam, quis nostrum exercitationem ullam
+                            corporis suscipit laboriosam, nisi ut aliquid ex 
+                          </p>
+                    </div>
+                </div>
+                <div class="item lunch">
+                    <img src="/img/sandwhich.jpg">
+                    <div class="item-info">
+                        <header>
+                        <h4>BLT Sandwhich</h4>
+                        <h4 class="price">$20.99</h4>
+                        </header>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span> 
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <hr class="border">
+                        <p class="item-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Repudiandae, sint quam. Et reprehenderit fugiat nesciunt inventore
+                            laboriosam excepturi! Quo, officia.
+                          </p>
+                    </div>
+                </div>
+                <div class="item dinner">
+                    <img src="/img/steak.jpg">
+                    <div class="item-info">
+                        <header>
+                        <h4>Steak Filet</h4>
+                        <h4 class="price">$38.99</h4>
+                        </header>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span> 
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </div>
+                        <hr class="border">
+                        <p class="item-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Repudiandae, sint quam. Et reprehenderit fugiat nesciunt inventore
+                            laboriosam excepturi! Quo, officia.
+                          </p>
+                    </div>
+                </div>
+                <div class="item breakfast">
+                    <img src="/img/waffle.jpg">
+                    <div class="item-info">
+                        <header>
+                        <h4>Strawberry Waffle</h4>
+                        <h4 class="price">$17.99</h4>
+                        </header>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span> 
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </div>
+                        <hr class="border">
+                        <p class="item-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Repudiandae, sint quam. Et reprehenderit fugiat nesciunt inventore
+                            laboriosam excepturi!
+                          </p>
+                    </div>
+                </div>
+                <div class="item lunch">
+                    <img src="/img/wrap.jpg">
+                    <div class="item-info">
+                        <header>
+                        <h4>Thai Chicken Wrap</h4>
+                        <h4 class="price">$21.99</h4>
+                        </header>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span> 
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <hr class="border">
+                        <p class="item-text">
+                            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.
+                          </p>
+                    </div>
+                </div>
+            </div>
+            
+    </div>
+    
+    <script src="script.js"></script>
+    
+</body>
+</html>
